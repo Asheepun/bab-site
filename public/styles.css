@@ -11,17 +11,9 @@
 }
 
 header{
-	margin-bottom: 20px;
-}
-
-.menu{
+	padding: 5px;
 	background: black;
-}
-
-.menu > a > li{
- 	display: inline-block;
-	font-size: 30px;
-	padding: 10px;
+	margin-bottom: 20px;
 }
 
 .white-text{
@@ -32,10 +24,6 @@ header{
 .black-text{
 	color: black;
 	font-family: game;
-}
-
-.menu > a > li:hover{
-	color: grey;
 }
 
 .game-btn{
