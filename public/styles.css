@@ -1,0 +1,72 @@
+*{
+	margin: 0px auto;
+	padding: 0px;
+	text-decoration: none;
+	text-align: center;
+}
+
+@font-face{
+    font-family: "game";
+    src: url("/game.ttf");
+}
+
+header{
+	margin-bottom: 20px;
+}
+
+.menu{
+	background: black;
+}
+
+.menu > a > li{
+ 	display: inline-block;
+	font-size: 30px;
+	padding: 10px;
+}
+
+.white-text{
+	color: white;
+	font-family: game;
+}
+
+.black-text{
+	color: black;
+	font-family: game;
+}
+
+.menu > a > li:hover{
+	color: grey;
+}
+
+.game-btn{
+	margin: 5px;
+	padding: 5px;
+	font-size: 20px;
+	background: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	outline: none;
+}
+
+.game-btn:hover{
+	color: white;
+	background: black;
+}
+
+.game-img{
+	margin: 5px auto;
+	border-radius: 5px;
+}
+
+.icon{
+	margin: 0px 7px;
+	height: 25px;
+}
+
+iframe{
+	border: 0px;
+}
+
+#abb-download{
+	display: none;
+}
