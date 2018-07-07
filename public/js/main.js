@@ -9,10 +9,28 @@ const hideGames = () => Array.from(document.getElementsByClassName("game")).forE
 	div.style.display = "none";
 });
 
+const fullscreenBtn = (container, iframe) => {
+	const btn = document.createElement("button");
+
+	btn.innerHTML = "fullscreen";
+
+	btn.classList.add("game-btn");
+
+	btn.addEventListener("click", (e) => {
+		if(container.requestFullscreen){
+			container.requestFullscreen();
+		}else if(iframe.webkitRequestFullscreen){
+			iframe.webkitRequestFullscreen();
+		}
+		iframe.style.background = "black";
+	});
+
+	return btn;
+}
+
 document.getElementById("play-abb").addEventListener("click", (e) => {
 	hideGames();
 
-	//game
 	const container = document.createElement("div");
 	const iframe = document.createElement("iframe");
 
@@ -25,22 +43,25 @@ document.getElementById("play-abb").addEventListener("click", (e) => {
 	container.appendChild(iframe)
 	document.body.appendChild(container);
 
-	//fullscreen
-	const btn = document.createElement("button");
-
-	btn.innerHTML = "fullscreen";
-
-	btn.classList.add("game-btn");
-
-	document.body.appendChild(btn);
-
-	btn.addEventListener("click", (e) => {
-		if(container.requestFullscreen){
-			container.requestFullscreen();
-		}else if(iframe.webkitRequestFullscreen){
-			iframe.webkitRequestFullscreen();
-		}
-		iframe.style.background = "black";
-	});
+	document.body.appendChild(fullscreenBtn(container, iframe));
 
 });
+
+document.getElementById("play-sheepsheep").addEventListener("click", (e) => {
+	hideGames();
+	
+	const container = document.createElement("div");
+	const iframe = document.createElement("iframe");
+
+	iframe.src = "https://sheepsheep.herokuapp.com";
+	iframe.scrolling = "no";
+
+	iframe.width = 600;
+	iframe.height = 300;
+
+	container.appendChild(iframe);
+	document.body.appendChild(container);
+
+	document.body.appendChild(fullscreenBtn(container, iframe));
+
+})
