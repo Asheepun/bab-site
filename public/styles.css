@@ -44,11 +44,19 @@ header{
 .game-img{
 	margin: 5px auto;
 	border-radius: 5px;
+	border: 2px solid black;
 }
 
 .icon{
 	margin: 0px 7px;
 	height: 25px;
+}
+
+.separator{
+	margin: 20px auto;
+	background: black;
+	height: 1px;
+	width: 200px;
 }
 
 iframe{
